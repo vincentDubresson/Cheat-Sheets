@@ -1,0 +1,53 @@
+///////////////////////////////////////////////////////////////////////////////////
+/*                                                                               */
+/*                   DESTRUCTURATION D'OBJETS ET DE TABLEAUX                     */
+/*                                                                               */
+///////////////////////////////////////////////////////////////////////////////////
+
+// Créer des variables par décomposition à partir d'un objet
+
+const product = { name: "socks", price: 5, color: "red" };
+const { name, price, color } = product;
+
+console.log(`Those ${color} ${name} cost ${price} euros`);
+console.log('\n');
+
+
+// Créer des variables par décomposition à partir d'un tableau
+
+const animals = ["Hubert", "Rosemary", "Paul"];
+const [hamster, nini, guineaFowl] = animals;
+
+console.log(hamster);
+console.log(nini);
+console.log(guineaFowl);
+console.log('\n');
+
+// Expérience WCS
+
+const fruits = ["🍏", "🍍", "🥝", "🥑", "🍒", "🍓"];
+
+const [pomme, ananas, kiwi, avocat, cerise, fraise] = fruits;
+
+console.log(`${pomme} - ${ananas} - ${kiwi} - ${avocat} - ${cerise} - ${fraise}`);
+console.log('\n');
+
+
+// Syntaxe "rest"
+
+const sock = { sockName: "socks", price: 5, color: "red" };
+// les '...' (rest) vont référencer un nouvel objet avec les propriétés qui n'ont pas été citées
+const { sockName, ...otherProperties } = sock;
+
+console.log(sockName);
+console.log(otherProperties);
+console.log('\n');
+
+// Expérience WCS
+
+const sameFruits = ["🍏", "🍍", "🥝", "🥑", "🍒", "🍓"];
+// les '...' (rest) vont référencer un nouveau tableau avec les valeurs qui n'ont pas été citées
+[apple, pineapple, ...otherFruits] = sameFruits;
+
+console.log(`${apple}, ${pineapple}`);
+console.log(otherFruits);
